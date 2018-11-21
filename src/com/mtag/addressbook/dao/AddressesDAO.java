@@ -7,10 +7,13 @@ import com.mtag.addressbook.entity.Contacts;
 
 
 public interface AddressesDAO {
+	
 	public void saveAddress(Addresses theAddresses);
 	
 	public Addresses getAddress(int theId);
 	
 	public List<Addresses> getAddresses();
+	
+	public void deleteAddress(int theId);
 
 }

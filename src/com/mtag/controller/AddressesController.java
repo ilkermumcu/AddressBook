@@ -1,5 +1,7 @@
 package com.mtag.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,19 +29,29 @@ public class AddressesController {
 		//addressesService.saveAddress(theAddresses);
 		return "address_form";
 		
-		
-
 	}
 	
 	@PostMapping("/updateAddress")
 	public String updateAddress(@ModelAttribute("addresses") Addresses theAddresses) {
 		addressesService.saveAddress(theAddresses);
-		return "address_list";
-		
-		
-		
+		return "redirect:/addresses/list";
 	}
 	
+	@GetMapping("/list")
+	public String getAddresses(Model theModel) {
+
+		List<Addresses> theAddresses = addressesService.getAddresses();
+		theModel.addAttribute("addresses", theAddresses);
+		return "address_list";
+
+	}
+	@GetMapping("/deleteAddress")
+	public String deleteAddress(@RequestParam("addressId") int theId) {
+
+		addressesService.deleteAddress(theId);
+		return "redirect:/addresses/list";
+
+	}
 	
 	
 	

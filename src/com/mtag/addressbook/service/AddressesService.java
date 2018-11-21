@@ -12,4 +12,6 @@ public interface AddressesService {
 	
 	public List<Addresses> getAddresses();
 
+	public void deleteAddress(int theId);
+
 }

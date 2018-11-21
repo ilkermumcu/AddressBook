@@ -31,9 +31,18 @@ public class AddressesServiceImp implements AddressesService {
 	}
 
 	@Override
+	@Transactional
 	public List<Addresses> getAddresses() {
 		
 		return addressesDAO.getAddresses();
+	}
+
+	@Override
+	@Transactional
+	public void deleteAddress(int theId) {
+		
+		addressesDAO.deleteAddress(theId);
+		
 	}
 
 }

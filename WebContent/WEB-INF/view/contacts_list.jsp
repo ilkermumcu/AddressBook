@@ -53,7 +53,7 @@
 						<th>Telefon</th>
 						<th>Mobil</th>
 						<th>Ändern</th>
-						<th>Adresse Hinzufügen</th>
+						<th>Adresse hinzufügen</th>
 						<th>Löschen</th>
 
 					</tr>
@@ -67,7 +67,7 @@
 							<td>${tempContacts.homePhone}</td>
 							<td>${tempContacts.mobile}</td>
 							<td><a class ="btn btn-warning" href="${pageContext.request.contextPath }/contacts/showFormForUpdate?contactId=${tempContacts.id}">Ändern</a></td>
-							<td><a class ="btn btn-warning" href="${pageContext.request.contextPath }/addresses/ContactForAddresses?contactId=${tempContacts.id}">Adresse Hinzufügen</a></td>
+							<td><a class ="btn btn-warning" href="${pageContext.request.contextPath }/addresses/ContactForAddresses?contactId=${tempContacts.id}">Adresse hinzufügen</a></td>
 							 <td><a class ="btn btn-danger" href="${pageContext.request.contextPath }/contacts/deleteContact?contactId=${tempContacts.id}"
 							    onclick="if(!(confirm('Möchten Sie dieses Kontakt wirklich löschen?')))return false;">Löschen</a></td>
 							

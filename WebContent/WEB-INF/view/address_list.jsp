@@ -28,7 +28,7 @@
 		<div class="container">
 			<div class="jumbotron jumbotron-fluid">
 				<div class="container">
-					<h1 class="display-4">Adresslist</h1>
+					<h1 class="display-4">Adressliste</h1>
 					<hr class="my-4">
 						<p class="lead">MT-AG Interview Beispiel Projekt</p>
 						<p class="lead">Ilker Mumcu</p>
@@ -40,18 +40,30 @@
 					<tr>
 					    <th>Vorname</th>
 						<th>Nachname</th>
-						<th>Address</th>
+						<th>Beruf</th>
+						<th>E-Mail</th>
+						<th>Telefon</th>
+						<th>Mobil</th>
+						<th>Adresse</th>
 						<th>Löschen</th>
+						
 
 					</tr>
 
-					<c:forEach var="tempAddresses" items="${contacts}">
+					<c:forEach var="tempAddresses" items="${addresses}">
 						<tr>
 							
-								<td>${tempAddresses.address}</td>
-							
-							 <td><a class ="btn btn-danger" href="${pageContext.request.contextPath }/contacts/deleteContact?contactId=${tempContacts.id}"
-							    onclick="if(!(confirm('Möchten Sie dieses Kontakt wirklich löschen?')))return false;">Löschen</a></td>
+								
+								  <td>${tempAddresses.contacts.firstName}</td>
+								  <td>${tempAddresses.contacts.lastName}</td>
+								  <td>${tempAddresses.contacts.profession}</td>
+								  <td>${tempAddresses.contacts.email}</td>
+								   <td>${tempAddresses.contacts.homePhone}</td>
+								    <td>${tempAddresses.contacts.mobile}</td>
+								   <td>${tempAddresses.address}</td>
+							    
+							 <td><a class ="btn btn-danger" href="${pageContext.request.contextPath }/addresses/deleteAddress?addressId=${tempAddresses.id}"
+							    onclick="if(!(confirm('Möchten Sie diese Adresse wirklich löschen?')))return false;">Löschen</a></td>
 							
 						</tr>
 					</c:forEach>

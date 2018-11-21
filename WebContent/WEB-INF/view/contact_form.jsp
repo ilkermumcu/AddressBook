@@ -79,6 +79,22 @@
 								placeholder="Email" path="email"></form:input>
 						</div>
 					</div>
+					
+					<div class="form-group">
+						<label for="homePhone" class="col-sm-10 control-label">Telefon</label>
+						<div>
+							<form:input type="text" class="form-control" id="homePhone"
+								placeholder="Telefon" path="homePhone"></form:input>
+						</div>
+					</div>
+                        
+                     <div class="form-group">
+						<label for="mobile" class="col-sm-10 control-label">Mobil</label>
+						<div>
+							<form:input type="text" class="form-control" id="mobile"
+								placeholder="Telefon" path="mobile"></form:input>
+						</div>
+					</div>
 
 
 					<div class="form-group">

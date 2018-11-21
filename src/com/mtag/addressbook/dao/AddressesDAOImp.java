@@ -27,7 +27,6 @@ public class AddressesDAOImp implements AddressesDAO {
 	@Override
 	public Addresses getAddress(int theId) {
        Session currentSession =sessionFactory.getCurrentSession();
-		
        Addresses theAddresses = currentSession.get(Addresses.class,theId);
 		return theAddresses;
 	}
@@ -39,6 +38,16 @@ public class AddressesDAOImp implements AddressesDAO {
 		List<Addresses> addresses = theQuery.getResultList();
 
 		return addresses;
+		       
+	}
+
+	@Override
+	public void deleteAddress(int theId) {
+		Session currentSession =sessionFactory.getCurrentSession();
+		Query theQuery =currentSession.createQuery("delete from Addresses where id=:addressId");
+		theQuery.setParameter("addressId", theId);
+		theQuery.executeUpdate();
+		
 	}
 	
 }
