@@ -34,7 +34,7 @@ public class AddressesDAOImp implements AddressesDAO {
 	@Override
 	public List<Addresses> getAddresses() {
 		Session currentSession =sessionFactory.getCurrentSession();
-		Query<Addresses> theQuery =currentSession.createQuery("from Addresses",Addresses.class);
+		Query<Addresses> theQuery =currentSession.createQuery("from Addresses where contactId is not null",Addresses.class);
 		List<Addresses> addresses = theQuery.getResultList();
 
 		return addresses;
